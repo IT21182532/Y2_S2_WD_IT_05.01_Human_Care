@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Human Care</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="emp_salary">Samurdhi beneficiary housing</string>
+    <string name="Contact">Household units with children under 5 years</string>
+    <string name="emp_name">Domestic units for more than 5 persons.</string>
+    <string name="address">Household units with people with chronic diseases</string>
+    <string name="emp_id">ID</string>
+    <string name="emp_salary2">Main Income None /Aided or Unskilled</string>
+    <string name="emp_total">Total Salary</string>
+    <string name="loading_data">Loading Data.....</string>
+</resources>
