@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Human Care</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="Std_ID">Student ID </string>
+    <string name="S_uni">University</string>
+    <string name="S_name">Student Name</string>
+    <string name="S_id">Student ID</string>
+</resources>
