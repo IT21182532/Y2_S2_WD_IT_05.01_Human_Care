@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Human Care</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="District">District</string>
+    <string name="Contact">Contact Number</string>
+    <string name="emp_name">Name</string>
+    <string name="address">Address</string>
+    <string name="emp_id">ID</string>
+    <string name="Member">Number of family members</string>
+    <string name="emp_total">Total Salary</string>
+    <string name="loading_data">Loading Data.....</string>
+</resources>
