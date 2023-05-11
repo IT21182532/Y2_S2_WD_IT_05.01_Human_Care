@@ -24,7 +24,7 @@ class InsertionActivity : AppCompatActivity() {
 
 
     private lateinit var btnSaveData: Button
-    private lateinit var Calbtn:Button
+
 
     private lateinit var dbRef: DatabaseReference
 
@@ -43,7 +43,7 @@ class InsertionActivity : AppCompatActivity() {
 
 
         btnSaveData = findViewById(R.id.btnSaveData)
-        Calbtn =findViewById(R.id.calbutton)
+
 
         dbRef = FirebaseDatabase.getInstance().getReference("Student_Details")
 
@@ -51,11 +51,7 @@ class InsertionActivity : AppCompatActivity() {
             saveStudentData()
         }
 
-        Calbtn.setOnClickListener{
 
-            val intent = Intent(this, CalActivity::class.java)
-            startActivity(intent)
-        }
 
 
 
@@ -102,7 +98,7 @@ class InsertionActivity : AppCompatActivity() {
 
         dbRef.child(Stid).setValue(student)
             .addOnCompleteListener{
-                Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_LONG ).show()
+
 
                 stdname.text.clear()
                 uni.text.clear()
@@ -112,6 +108,8 @@ class InsertionActivity : AppCompatActivity() {
                 Email.text.clear()
                 Samurdhi.text.clear()
                 Housenumber.text.clear()
+
+                Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_LONG ).show()
 
             }.addOnFailureListener{err ->
                 Toast.makeText(this, "Error ${err.message}", Toast.LENGTH_LONG).show()

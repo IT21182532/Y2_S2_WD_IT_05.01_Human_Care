@@ -23,6 +23,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, TwobtnviewActivity::class.java)
             startActivity(intent)
         }
+        lowerbutton.setOnClickListener{
+            val intent = Intent(this, InsertionActivityLI::class.java)
+            startActivity(intent)
+        }
 //
 //        btnFetchData.setOnClickListener{
 //            val intent = Intent(this, FetchingActivity::class.java)
