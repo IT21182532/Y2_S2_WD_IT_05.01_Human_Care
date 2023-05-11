@@ -16,7 +16,7 @@ class MyActivity : AppCompatActivity() {
         val income2 = findViewById(R.id.etIncome2) as EditText
         val other = findViewById(R.id.etOther) as EditText
 
-        val resultTextView = findViewById<TextView>(R.id.tvResult)
+        val resultTextView = findViewById(R.id.tvResultview) as TextView
 
         val btnSum = findViewById<Button>(R.id.btnCal)
 

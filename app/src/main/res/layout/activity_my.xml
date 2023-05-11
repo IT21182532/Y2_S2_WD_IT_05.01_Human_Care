@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.IncomeActivity">
+    tools:context=".activities.MyActivity">
 
     <EditText
         android:id="@+id/etIncome1"
@@ -52,15 +52,16 @@
         android:text="CALCULATE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etOther"
-        app:layout_constraintVertical_bias="0.19" />
+        app:layout_constraintVertical_bias="0.131" />
 
     <TextView
         android:id="@+id/tvTotal"
         android:layout_width="362dp"
         android:layout_height="54dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:gravity="center"
         android:hint="Total Amount of Income"
@@ -78,14 +79,29 @@
         android:text="SAVE DATA"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvTotal"
-        app:layout_constraintVertical_bias="0.367" />
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <TextView
+        android:id="@+id/tvResultview"
+        android:layout_width="70dp"
+        android:layout_height="27dp"
+        android:text=""
+        app:layout_constraintBottom_toTopOf="@+id/btnSaveData"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotal" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="410dp"
-        android:layout_height="104dp"
-        app:srcCompat="@drawable/calculate_income"
-        tools:layout_editor_absoluteY="40dp" />
+        android:layout_width="136dp"
+        android:layout_height="156dp"
+        android:src="@drawable/calculate_income"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.53"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
