@@ -53,12 +53,12 @@ class FetchingActivity : AppCompatActivity() {
                             val intent = Intent(this@FetchingActivity, RequirementsDetailsActivity::class.java)
 
                             //put extras
-                            intent.putExtra("empId", empList[position].empId)
-                            intent.putExtra("empName", empList[position].empName)
-                            intent.putExtra("Address", empList[position].address)
-                            intent.putExtra("Contact", empList[position].Contact)
-                            intent.putExtra("empSalary", empList[position].empSalary)
-                            intent.putExtra("empSalary2", empList[position].empSalary2)
+                            intent.putExtra("REQ1", empList[position].REQ1)
+                            intent.putExtra("REQ2", empList[position].REQ2)
+                            intent.putExtra("REQ3", empList[position].REQ3)
+                            intent.putExtra("REQ4", empList[position].REQ4)
+                            intent.putExtra("REQ5", empList[position].REQ5)
+                            intent.putExtra("REQ6", empList[position].REQ6)
                             startActivity(intent)
                         }
 

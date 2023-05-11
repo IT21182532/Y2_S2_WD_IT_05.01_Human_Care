@@ -68,34 +68,34 @@ class InsertionActivity : AppCompatActivity() {
     }
     private fun saveEmployeeData() {
         //getting values
-        val empName = etEmpName.text.toString()
-        val Address = etAddress.text.toString()
-        val contactNum = etContactN.text.toString()
-        val empSalary = etEmpSalary.text.toString()
-        val empSalary2 = etEmpSalary2.text.toString()
+        val REQ2 = etEmpName.text.toString()
+        val REQ3 = etAddress.text.toString()
+        val REQ4 = etContactN.text.toString()
+        val REQ5 = etEmpSalary.text.toString()
+        val REQ6 = etEmpSalary2.text.toString()
 
-        if (empName.isEmpty()){
+        if (REQ2.isEmpty()){
             etEmpName.error = "Please enter Yes/No"
         }
-        if (Address.isEmpty()){
+        if (REQ3.isEmpty()){
             etAddress.error = "Please enter Yes/No"
         }
-        if (contactNum.isEmpty()){
+        if (REQ4.isEmpty()){
             etContactN.error = "Please enter Yes/No"
         }
-        if (empSalary.isEmpty()){
+        if (REQ5.isEmpty()){
             etEmpSalary.error = "Please enter Yes/No"
         }
-        if (empSalary2.isEmpty()){
+        if (REQ6.isEmpty()){
             etEmpSalary2.error = "Please enter Yes/No"
         }
 
 
-        val empId = dbRef.push().key!!
+        val REQ1 = dbRef.push().key!!
 
-        val employee = EmployeeModel(empId,empName,Address, contactNum,empSalary, empSalary2 )
+        val employee = EmployeeModel(REQ1,REQ2,REQ3, REQ4,REQ5, REQ6 )
 
-        dbRef.child(empId).setValue(employee)
+        dbRef.child(REQ1).setValue(employee)
             .addOnCompleteListener{
                 Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_LONG ).show()
 

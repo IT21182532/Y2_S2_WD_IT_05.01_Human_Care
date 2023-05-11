@@ -12,28 +12,42 @@ class ExpenseActivity: AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my)
 
-        val income1 = findViewById<EditText>(R.id.etIncome1)
-        val income2 = findViewById<EditText>(R.id.etIncome2)
-        val other = findViewById<EditText>(R.id.etOther)
+        val ex1 = findViewById<TextView>(R.id.etFood1)
+        val ex2 = findViewById<TextView>(R.id.etUtility1)
+        val ex3 = findViewById<TextView>(R.id.etMedical1)
+        val ex4 = findViewById<TextView>(R.id.etEdu1)
+        val ex5 = findViewById<TextView>(R.id.etTransport1)
 
-        val resultTextView = findViewById<TextView>(R.id.tvTotal)
+        val btnSum = findViewById<Button>(R.id.btnAdd)
+        val b2 = findViewById<Button>(R.id.btnAdd2)
+        //val number1 = findViewById<EditText>(R.id.etNumber1)
+        //val number2 = findViewById<EditText>(R.id.etNumber2)
+        val resultTextView = findViewById<TextView>(R.id.tvResult)
+        //val btnSum = findViewById<Button>(R.id.btnAdd)
 
-        val btnSum = findViewById<Button>(R.id.btnCal)
+        btnSum.setOnClickListener{
+            //val n1 = number1.text.toString().toInt()
+            //val n2 = number2.text.toString().toInt()
+            //val result = n1 + n2
+            //resultTextView.text = result.toString()
+            val e1 = ex1.text.toString().toInt()
+            val e2 = ex2.text.toString().toInt()
+            val e3 = ex3.text.toString().toInt()
+            val e4 = ex4.text.toString().toInt()
+            val e5 = ex5.text.toString().toInt()
 
-        //button click event
-        btnSum.setOnClickListener {
-            val in1 = income1.text.toString().toInt()
-            val in2 = income2.text.toString().toInt()
-            val oth = other.text.toString().toInt()
-            val result = in1 + in2 + oth
-
+            val result = e1+e2+e3+e4+e5
             resultTextView.text = result.toString()
+        }
 
+        b2.setOnClickListener{
 
+            ex1.setText("")
+            ex2.setText("")
+            ex3.setText("")
+            ex4.setText("")
+            ex5.setText("")
         }
 
     }
-
-
-
 }

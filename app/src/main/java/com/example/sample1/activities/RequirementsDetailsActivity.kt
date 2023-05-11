@@ -14,12 +14,12 @@ import com.google.firebase.database.FirebaseDatabase
 
 class RequirementsDetailsActivity : AppCompatActivity() {
 
-    private lateinit var tvEmpId: TextView
-    private lateinit var tvEmpName: TextView
-    private lateinit var tvAddress: TextView
-    private lateinit var tvContact: TextView
-    private lateinit var tvEmpSalary: TextView
-    private lateinit var tvEmpSalary2: TextView
+    private lateinit var tvRREQ1: TextView
+    private lateinit var tvRREQ2: TextView
+    private lateinit var tvRREQ3: TextView
+    private lateinit var tvRREQ4: TextView
+    private lateinit var tvRREQ5: TextView
+    private lateinit var tvRREQ6: TextView
     private lateinit var btnUpdate: Button
     private lateinit var btnDelete: Button
 
@@ -32,13 +32,13 @@ class RequirementsDetailsActivity : AppCompatActivity() {
 
         btnUpdate.setOnClickListener{
             openUpdateDialog(
-                intent.getStringExtra("empId").toString(),
-                intent.getStringExtra("empName").toString()
+                intent.getStringExtra("REQ1").toString(),
+                intent.getStringExtra("REQ2").toString()
             )
         }
         btnDelete.setOnClickListener{
             deleteRecord(
-                intent.getStringExtra("empId").toString()
+                intent.getStringExtra("REQ1").toString()
             )
         }
 
@@ -61,24 +61,24 @@ class RequirementsDetailsActivity : AppCompatActivity() {
     }
 
     private fun initView() {
-        tvEmpId = findViewById(R.id.tvEmpId)
-        tvEmpName = findViewById(R.id.tvEmpName)
-        tvAddress = findViewById(R.id.tvAddress)
-        tvContact = findViewById(R.id.tvContact)
-        tvEmpSalary = findViewById(R.id.tvEmpSalary)
-        tvEmpSalary2 = findViewById(R.id.tvEmpSalary2)
+        tvRREQ1 = findViewById(R.id.tvEmpId)
+        tvRREQ2 = findViewById(R.id.tvEmpName)
+        tvRREQ3 = findViewById(R.id.tvAddress)
+        tvRREQ4 = findViewById(R.id.tvContact)
+        tvRREQ5 = findViewById(R.id.tvEmpSalary)
+        tvRREQ6 = findViewById(R.id.tvEmpSalary2)
 
         btnUpdate = findViewById(R.id.btnUpdate)
         btnDelete = findViewById(R.id.btnDelete)
     }
 
     private fun setValuesToViews() {
-        tvEmpId.text = intent.getStringExtra("empId")
-        tvEmpName.text = intent.getStringExtra("empName")
-        tvAddress.text = intent.getStringExtra("Address")
-        tvContact.text = intent.getStringExtra("Contact")
-        tvEmpSalary.text = intent.getStringExtra("empSalary")
-        tvEmpSalary2.text = intent.getStringExtra("empSalary2")
+        tvRREQ1.text = intent.getStringExtra("REQ1")
+        tvRREQ2.text = intent.getStringExtra("REQ2")
+        tvRREQ3.text = intent.getStringExtra("REQ3")
+        tvRREQ4.text = intent.getStringExtra("REQ4")
+        tvRREQ5.text = intent.getStringExtra("REQ5")
+        tvRREQ6.text = intent.getStringExtra("REQ6")
 
     }
 
@@ -100,11 +100,11 @@ class RequirementsDetailsActivity : AppCompatActivity() {
 
         val btnUpdateData = mDialogView.findViewById<Button>(R.id.btnUpdateData)
 
-        etEmpName.setText(intent.getStringExtra("empName").toString())
-        etAddress.setText(intent.getStringExtra("Address").toString())
-        etContact.setText(intent.getStringExtra("Contact").toString())
-        etEmpSalary.setText(intent.getStringExtra("empSalary").toString())
-        etEmpSalary2.setText(intent.getStringExtra("empSalary2").toString())
+        etEmpName.setText(intent.getStringExtra("REQ2").toString())
+        etAddress.setText(intent.getStringExtra("REQ3").toString())
+        etContact.setText(intent.getStringExtra("REQ4").toString())
+        etEmpSalary.setText(intent.getStringExtra("REQ5").toString())
+        etEmpSalary2.setText(intent.getStringExtra("REQ6").toString())
 
         mDialog.setTitle("Updating $empName Record")
 
@@ -112,7 +112,7 @@ class RequirementsDetailsActivity : AppCompatActivity() {
         alertDialog.show()
 
         btnUpdateData.setOnClickListener{
-            updateEmpData(
+            updateREQData(
                 empId,
                 etEmpName.text.toString(),
                 etAddress.text.toString(),
@@ -122,27 +122,27 @@ class RequirementsDetailsActivity : AppCompatActivity() {
             )
             Toast.makeText(applicationContext, "Requirements data updated", Toast.LENGTH_LONG).show()
 
-            tvEmpName.text = etEmpName.text.toString()
-            tvAddress.text = etAddress.text.toString()
-            tvContact.text = etContact.text.toString()
-            tvEmpSalary.text = etEmpSalary.text.toString()
-            tvEmpSalary2.text = etEmpSalary2.text.toString()
+            tvRREQ2.text = etEmpName.text.toString()
+            tvRREQ3.text = etAddress.text.toString()
+            tvRREQ4.text = etContact.text.toString()
+            tvRREQ5.text = etEmpSalary.text.toString()
+            tvRREQ6.text = etEmpSalary2.text.toString()
 
             alertDialog.dismiss()
         }
 
     }
-    private fun updateEmpData(
-        id: String,
-        name: String,
-        address: String,
-        contact: String,
-        salary: String,
-        salary2: String,
+    private fun updateREQData(
+        REQ1: String,
+        REQ2: String,
+        REQ3: String,
+        REQ4: String,
+        REQ5: String,
+        REQ6: String,
 
     ){
-        val dbRef = FirebaseDatabase.getInstance().getReference("Requirements").child(id)
-        val empInfo = EmployeeModel(id, name, address, contact, salary, salary2)
-        dbRef.setValue(empInfo)
+        val dbRef = FirebaseDatabase.getInstance().getReference("Requirements").child(REQ1)
+        val REQInfo = EmployeeModel(REQ1, REQ2, REQ3, REQ4, REQ5, REQ6)
+        dbRef.setValue(REQInfo)
     }
 }

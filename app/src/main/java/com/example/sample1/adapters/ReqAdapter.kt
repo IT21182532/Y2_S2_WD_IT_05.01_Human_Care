@@ -28,7 +28,7 @@ class ReqAdapter(private val empList: ArrayList<EmployeeModel>):
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val currentEmp = empList[position]
-        holder.tvEmpName.text = currentEmp.empName
+        holder.tvEmpName.text = currentEmp.REQ4
     }
 
     override fun getItemCount(): Int {
